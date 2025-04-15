@@ -1,70 +1,59 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import './index.css';
 
 export default function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      className="min-h-screen bg-black text-white font-sans electric-bg"
-    >
-      <div className="electric-overlay"></div>
-      <header className="flex items-center justify-between p-4 border-b border-gray-700 relative z-10">
-        <motion.h1
-          initial={{ x: -50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="text-2xl font-bold text-neon-blue glow-text"
-        >
-          Jemrey's Portfolio
-        </motion.h1>
-        <button className="md:hidden text-neon-green" onClick={() => setMenuOpen(!menuOpen)}>
-          Menu
-        </button>
-        <nav className="hidden md:flex space-x-6">
-          <a href="#about" className="hover:text-neon-purple glow-text">About</a>
-          <a href="#projects" className="hover:text-neon-purple glow-text">Projects</a>
-          <a href="#contact" className="hover:text-neon-purple glow-text">Contact</a>
+    <div className="bg-black text-white font-sans">
+      {/* Navbar */}
+      <header className="fixed w-full bg-black/60 backdrop-blur-sm z-50 border-b border-gray-800">
+        <nav className="flex justify-between items-center px-6 py-4 max-w-6xl mx-auto">
+          <h1 className="text-xl font-bold text-cyan-400 glow-text">Jemrey</h1>
+          <ul className="flex space-x-6 text-gray-300">
+            <li><a href="#about" className="hover:text-cyan-400 transition">About</a></li>
+            <li><a href="#projects" className="hover:text-cyan-400 transition">Projects</a></li>
+            <li><a href="#contact" className="hover:text-cyan-400 transition">Contact</a></li>
+          </ul>
         </nav>
       </header>
-      {menuOpen && (
-        <motion.nav
-          initial={{ height: 0, opacity: 0 }}
-          animate={{ height: 'auto', opacity: 1 }}
-          transition={{ duration: 0.3 }}
-          className="md:hidden flex flex-col items-center bg-gray-900 py-4 relative z-10"
+
+      {/* Hero */}
+      <section className="min-h-screen flex items-center justify-center text-center px-4 pt-24 bg-gradient-to-b from-black to-gray-900">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
         >
-          <a href="#about" className="py-2 text-neon-purple glow-text">About</a>
-          <a href="#projects" className="py-2 text-neon-purple glow-text">Projects</a>
-          <a href="#contact" className="py-2 text-neon-purple glow-text">Contact</a>
-        </motion.nav>
-      )}
-      <motion.section
-        initial={{ scale: 0.9, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="text-center py-20 bg-gradient-to-br from-gray-900 to-black relative z-10"
-      >
-        <h2 className="text-4xl mb-4 text-neon-green glow-text">Hello, I'm Jemrey</h2>
-        <p className="text-xl text-gray-300">A passionate web developer</p>
-      </motion.section>
-      <motion.section
-        id="about"
-        initial={{ x: -100, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="p-6 bg-black border-t border-gray-700 relative z-10"
-      >
-        <h3 className="text-2xl mb-4 text-neon-blue glow-text">About Me</h3>
-        <p>Name: Jemrey</p>
-        <p>Age: 19</p>
-        <p>Email: jemcarx@gmail.com</p>
-      </motion.section>
-    </motion.div>
+          <h2 className="text-4xl sm:text-5xl font-bold text-cyan-400 glow-text mb-4">
+            Hello, I'm Jemrey
+          </h2>
+          <p className="text-lg text-gray-300">19 y/o aspiring web developer</p>
+        </motion.div>
+      </section>
+
+      {/* About */}
+      <section id="about" className="max-w-4xl mx-auto px-6 py-20 border-t border-gray-800">
+        <h3 className="text-2xl font-semibold text-cyan-300 mb-4 glow-text">About Me</h3>
+        <p className="text-gray-400 leading-relaxed">
+          I’m Jemrey, a passionate web developer who enjoys building clean, responsive, and modern web interfaces. I specialize in front-end development using React, TailwindCSS, and Vite.
+        </p>
+      </section>
+
+      {/* Projects */}
+      <section id="projects" className="max-w-4xl mx-auto px-6 py-20 border-t border-gray-800">
+        <h3 className="text-2xl font-semibold text-cyan-300 mb-4 glow-text">Projects</h3>
+        <p className="text-gray-400">More coming soon... (add your projects here!)</p>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="max-w-4xl mx-auto px-6 py-20 border-t border-gray-800">
+        <h3 className="text-2xl font-semibold text-cyan-300 mb-4 glow-text">Contact</h3>
+        <p className="text-gray-400">Email me at: <a href="mailto:jemcarx@gmail.com" className="text-cyan-400 underline">jemcarx@gmail.com</a></p>
+      </section>
+
+      {/* Footer */}
+      <footer className="text-center text-sm text-gray-500 py-6 border-t border-gray-800">
+        &copy; 2025 Jemrey. All rights reserved.
+      </footer>
+    </div>
   );
 }
