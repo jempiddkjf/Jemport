@@ -24,7 +24,7 @@ export default function App() {
           transition={{ duration: 1 }}
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-[#f4c97a] glow-soft mb-4">
-            Hello, I'm Jemrey Dela Cruz
+            Hello, I'm Jemrey
           </h2>
           <p className="text-lg text-[#b0b0b0]">19 y/o aspiring web developer</p>
         </motion.div>
@@ -34,14 +34,14 @@ export default function App() {
       <section id="about" className="max-w-4xl mx-auto px-6 py-20 border-t border-[#1f1f1f]">
         <h3 className="text-2xl font-semibold text-[#ededed] mb-4 glow-soft">About Me</h3>
         <p className="text-[#b0b0b0] leading-relaxed">
-          I’m Jemrey, welcome to my website this was created by code of chatgpt extract in GitHub and deploy on Vercel.com
+          I’m Jemrey, a passionate web developer who enjoys building clean, responsive, and modern web interfaces. I specialize in front-end development using React, TailwindCSS, and Vite.
         </p>
       </section>
 
       {/* Projects */}
       <section id="projects" className="max-w-4xl mx-auto px-6 py-20 border-t border-[#1f1f1f]">
         <h3 className="text-2xl font-semibold text-[#ededed] mb-4 glow-soft">Projects</h3>
-        <p className="text-[#b0b0b0]"  (hehe)</p>
+        <p className="text-[#b0b0b0]">More coming soon... (add your projects here!)</p>
       </section>
 
       {/* Contact */}
@@ -56,4 +56,4 @@ export default function App() {
       </footer>
     </div>
   );
-                                                     }
+}
